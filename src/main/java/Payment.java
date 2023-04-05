@@ -4,11 +4,10 @@ public class Payment {
     private int cvv;
     private double amount;
 
-    public Payment(String cardHolderName, int cardNumber, int cvv, double amount){
-        this.cardHolderName =cardHolderName;
-        this.cardNumber = cardNumber;
-        this.cvv = cvv;
-        this.amount = amount;
+    public Payment(int cardNumber, int cvv, double amount){
+        setCardNumber(cardNumber);
+        setCvv(cvv);
+        setAmount(amount);
     }
 
     public String getCardHolderName() {
@@ -24,6 +23,9 @@ public class Payment {
     }
 
     public void setCardNumber(int cardNumber) {
+        if(cardNumber.length() != 8){
+            throw new IllegalArgumentException("Card number must be 8 digits long");
+        }
         this.cardNumber = cardNumber;
     }
 
@@ -32,7 +34,9 @@ public class Payment {
     }
 
     public void setCvv(int cvv) {
-        this.cvv = cvv;
+        if(cvv.length() != 3){
+            throw new IllegalArgumentException("CVV must be 3 digits long");
+        }
     }
 
     public double getAmount() {
