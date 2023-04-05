@@ -1,4 +1,4 @@
-public class Profile(){
+public class Profile{
     private String full_name;
     private String email;
     private String password;
@@ -24,9 +24,11 @@ public class Profile(){
         }
         this.email = email;
     }
-    public void getFull_Name(){
-        return this.fullName;
+
+    public String getFull_name() {
+        return full_name;
     }
+
     public void setFull_Name(String fullName) {
         if (!fullName.matches("^[A-Za-z]+\\s[A-Za-z]+$")) {
             throw new IllegalArgumentException("Invalid full name");
