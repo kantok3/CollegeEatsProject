@@ -1,10 +1,10 @@
 public class Profile(){
     private String full_name;
-    private string email;
-    private char password;
+    private String email;
+    private String password;
 
 
-    public void getPassword(){
+    public String getPassword(){
         return this.password;
     }
 
@@ -14,7 +14,7 @@ public class Profile(){
         }
         this.password = password;
     }
-    public void getEmail(){
+    public String getEmail(){
         return this.password;
     }
     public void setEmail(String email) {
@@ -25,7 +25,7 @@ public class Profile(){
         this.email = email;
     }
     public void getFull_Name(){
-        return this.fullName
+        return this.fullName;
     }
     public void setFull_Name(String fullName) {
         if (!fullName.matches("^[A-Za-z]+\\s[A-Za-z]+$")) {
