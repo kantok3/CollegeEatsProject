@@ -23,7 +23,7 @@ public class Payment {
     }
 
     public void setCardNumber(int cardNumber) {
-        if(cardNumber.length() != 8){
+        if(String.valueOf(cardNumber).length() != 8){
             throw new IllegalArgumentException("Card number must be 8 digits long");
         }
         this.cardNumber = cardNumber;
@@ -34,7 +34,7 @@ public class Payment {
     }
 
     public void setCvv(int cvv) {
-        if(cvv.length() != 3){
+        if(String.valueOf(cvv).length() != 3){
             throw new IllegalArgumentException("CVV must be 3 digits long");
         }
     }
@@ -46,4 +46,6 @@ public class Payment {
     public void setAmount(double amount) {
         this.amount = amount;
     }
+}
+
 }
